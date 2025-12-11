@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Senri Honda</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      color: #EAEAEA;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      margin-top: 50px;
+      animation: fadeIn 1.2s ease;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    a.back-link {
+      color: #4DA3FF;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+
+    .gallery {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      animation: fadeIn 1.4s ease;
+    }
+
+    .item {
+      background: #1E1E1E;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #2c2c2c;
+      transition: 0.25s ease;
+    }
+
+    .item:hover {
+      border-color: #4DA3FF;
+      box-shadow: 0 0 15px rgba(77,163,255,0.25);
+      transform: translateY(-3px);
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .caption {
+      font-size: 0.9rem;
+      color: #CCCCCC;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 30px 0;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    /* Fade animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Gallery</h1>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </header>
+
+  <section class="gallery">
+
+    <!-- ▼ ここを自由に増やせます（画像パスと説明文を変えるだけ） -->
+
+    <div class="item">
+      <img src="images/art1.jpg" alt="Artwork 1">
+      <div class="caption">Artwork Title 1</div>
+    </div>
+
+    <div class="item">
+      <img src="images/art2.jpg" alt="Artwork 2">
+      <div class="caption">Artwork Title 2</div>
+    </div>
+
+    <div class="item">
+      <img src="images/art3.jpg" alt="Artwork 3">
+      <div class="caption">Artwork Title 3</div>
+    </div>
+
+    <!-- ▲ 自由に追加 -->
+
+  </section>
+
+  <footer>
+    © 2025 Senri Honda
+  </footer>
+
+</body>
+</html>
