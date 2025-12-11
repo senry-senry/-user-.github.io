@@ -1,131 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Senri Honda | Introduction</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #fafafa;
-      color: #1f1f1f;
-      text-align: center;
-      line-height: 1.6;
-    }
-    header {
-      padding: 80px 20px 40px;
-    }
-    h1 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .subtitle {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 24px;
-    }
-    .icons a {
-      margin: 0 8px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #1f1f1f;
-      transition: transform 0.2s ease;
-    }
-    .icons a:hover {
-      transform: translateY(-2px);
-    }
-    section {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    .profile-img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-    .links {
+      padding: 0;
+      background: #121212;
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      color: #EAEAEA;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-top: 30px;
+      align-items: center;
+      min-height: 100vh;
     }
-    .link-btn {
-      border: 1px solid #e6e6e6;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 16px;
-      text-decoration: none;
-      color: #1f1f1f;
-      transition: border 0.2s ease, transform 0.15s ease;
-    }
-    .link-btn:hover {
-      border-color: #22a699;
-      transform: translateY(-2px);
-    }
-    footer {
-      font-size: 12px;
-      padding: 40px 0;
-      color: #555;
-      border-top: 1px solid #e6e6e6;
+
+    header {
       margin-top: 60px;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      color: #BBBBBB;
+      margin-bottom: 40px;
+    }
+
+    .intro {
+      width: 90%;
+      max-width: 650px;
+      background: #1E1E1E;
+      padding: 30px;
+      border-radius: 14px;
+      line-height: 1.8;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      animation: fadeIn 1.4s ease;
+    }
+
+    .links {
+      margin-top: 35px;
+      width: 90%;
+      max-width: 650px;
+      display: grid;
+      gap: 15px;
+    }
+
+    .card {
+      display: block;
+      padding: 18px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #1E1E1E;
+      color: #EAEAEA;
+      border: 1px solid #2c2c2c;
+      font-size: 1.05rem;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: #4DA3FF;
+      color: #4DA3FF;
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(77,163,255,0.35);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 30px 0;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    /* animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
+
   <!-- React -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 </head>
+
 <body>
   <header>
     <h1>Senri Honda</h1>
-    <div class="subtitle">Cloud Consultant / Research Enthusiast</div>
-    <div class="icons">
-      <a href="#" target="_blank">🐙</a>
-      <a href="#" target="_blank">𝕏</a>
-      <a href="#" target="_blank">✎</a>
-    </div>
+    <p class="subtitle">Welcome to my introduction page</p>
   </header>
 
-  <section>
-    <img src="profile.jpg" alt="Profile" class="profile-img" />
-    <p>Hello! I'm Senri Honda.<br>
-      I’m an IT consultant specializing in AWS/Azure cloud infrastructure and interested in NLP, linguistics and philosophy.
+  <section class="intro">
+    <p>
+      IT consultant based in Tokyo.  
+      Working mainly in cloud infrastructure (AWS, Azure) and interested in cloud-native systems,  
+      philosophy, and economics.  
+      This page collects my basic information and external links.  
     </p>
+
+    <!-- React Root -->
+    <div id="react-message" style="margin-top:20px; font-size:0.9rem; color:#9BCBFF;"></div>
   </section>
 
-  <section id="social-links"></section>
+  <section class="links">
+    <a class="card" href="https://note.com" target="_blank">📝 Note</a>
+    <a class="card" href="https://twitter.com" target="_blank">𝕏 (Twitter)</a>
+    <a class="card" href="https://researchmap.jp" target="_blank">🔍 researchmap</a>
+    <a class="card" href="https://instagram.com" target="_blank">📷 Instagram</a>
+  </section>
 
   <footer>
     © 2025 Senri Honda
   </footer>
 
+  <!-- React Script -->
   <script>
-    const e = React.createElement;
+    const messages = [
+      "Small steps build great careers.",
+      "Cloud evolves fast — enjoy learning.",
+      "Stay curious. Stay open.",
+      "Consistency beats intensity."
+    ];
 
-    function Links() {
-      const links = [
-        { name: 'Note', url: 'https://note.com/senry' },
-        { name: 'Twitter (X)', url: 'https://x.com/sen82599650' },
-        { name: 'Researchmap', url: 'https://researchmap.jp/senr1' },
-      ];
-
-      return e('div', { className: 'links' },
-        links.map(link =>
-          e('a', {
-            className: 'link-btn',
-            href: link.url,
-            target: '_blank'
-          }, link.name)
-        )
-      );
+    function RandomMessage() {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      return React.createElement("div", null, msg);
     }
 
-    ReactDOM.render(e(Links), document.getElementById('social-links'));
+    ReactDOM.render(
+      React.createElement(RandomMessage),
+      document.getElementById("react-message")
+    );
   </script>
+
 </body>
 </html>
