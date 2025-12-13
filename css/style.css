@@ -1,0 +1,194 @@
+/* ===== Base ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  color: #EAEAEA;
+  min-height: 100vh;
+}
+
+/* ===== Header Navigation ===== */
+.site-header {
+  width: 100%;
+  background: #121212;
+  border-bottom: 1px solid #2c2c2c;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 600;
+  color: #EAEAEA;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-menu a,
+.dropdown-label {
+  color: #EAEAEA;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* ===== Dropdown ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-label {
+  padding: 6px 6px;
+  display: inline-block;
+}
+
+/* ▼ メニュー本体 */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+
+  background: #1E1E1E;
+  border: 1px solid #2c2c2c;
+  border-radius: 12px;
+
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  z-index: 1001;
+}
+
+/* ★ 親 hover 中は常に表示 */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* メニュー項目 */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: #EAEAEA;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background: #2a2a2a;
+  color: #4DA3FF;
+}
+
+/* ===== Main Header ===== */
+header {
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #BBBBBB;
+  margin-bottom: 40px;
+}
+
+/* ===== Intro ===== */
+.intro {
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
+  background: #1E1E1E;
+  padding: 30px;
+  border-radius: 14px;
+  line-height: 1.8;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: fadeIn 1.4s ease;
+}
+
+.react-message {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #9BCBFF;
+}
+
+/* ===== Links ===== */
+.links {
+  margin: 35px auto 0;
+  width: 90%;
+  max-width: 650px;
+  display: grid;
+  gap: 15px;
+}
+
+.card {
+  display: block;
+  padding: 18px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: #1E1E1E;
+  color: #EAEAEA;
+  border: 1px solid #2c2c2c;
+  font-size: 1.05rem;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  border-color: #4DA3FF;
+  color: #4DA3FF;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(77,163,255,0.35);
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 60px;
+  padding: 30px 0;
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

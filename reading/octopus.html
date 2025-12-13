@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>タコの心身問題 読書会</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- ページ固有CSS -->
+  <style>
+    /* ===== Hero ===== */
+    .hero {
+      position: relative;
+      height: 60vh;
+      min-height: 380px;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%; /* ← 頭が切れにくい */
+      opacity: 0;
+      transform: scale(1.05);
+      filter: blur(10px) brightness(0.6);
+      transition:
+        opacity 1.8s ease,
+        transform 2.4s ease,
+        filter 2.2s ease;
+    }
+
+    .hero-image.is-visible {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0) brightness(1);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(18,18,18,0) 55%,
+        rgba(18,18,18,0.65) 80%,
+        rgba(18,18,18,1) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* ===== Content ===== */
+    .wrap {
+      width: 100%;
+      max-width: 820px;
+      margin: 40px auto 60px;
+      background: #1E1E1E;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0,0,0,0.35);
+    }
+
+    .content {
+      padding: 36px 28px;
+      line-height: 1.8;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .label {
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #4DA3FF;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .card-box {
+      background: #121212;
+      border: 1px solid #2c2c2c;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    .muted {
+      color: #BBBBBB;
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 20px;
+      background: #4DA3FF;
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 14px rgba(77,163,255,0.4);
+    }
+
+    footer.page-footer {
+      padding: 18px 26px;
+      font-size: 0.8rem;
+      color: #777;
+      border-top: 1px solid #2c2c2c;
+      text-align: right;
+      background: #121212;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Navigation Header（共通） ===== -->
+  <nav class="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html">Senri Honda</a>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html">ホーム</a></li>
+
+        <li class="dropdown">
+          <span class="dropdown-label">読書会 ▾</span>
+          <ul class="dropdown-menu">
+            <li><a href="octopus.html">タコの心身問題</a></li>
+            <li><a href="ai-philosophy.html">AIと哲学</a></li>
+            <li><a href="language.html">言語と意味</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Page Body ===== -->
+  <div class="wrap" role="main">
+
+    <!-- ===== Hero ===== -->
+    <div class="hero">
+      <img
+        src="../images/octopus.webp"
+        alt="ミステリアスなタコのイラスト"
+        class="hero-image"
+        id="heroImage"
+        loading="lazy"
+        decoding="async">
+    </div>
+
+    <!-- ===== Content ===== -->
+    <div class="content">
+
+      <div class="section">
+        <div class="label">概要</div>
+        <div class="card-box">
+          <p class="muted">
+            この読書会では『タコの心身問題』を手がかりに、タコの知性・意識・身体性をテーマに対話します。
+            分散した神経系や行動の多様性から、心の哲学・認知科学・生物学的観点を結びつけ、
+            タコという存在が投げかける「心とは何か」という問いを深く考察します。初心者歓迎。
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">開催日時</div>
+        <div class="card-box">
+          <p class="muted"><strong>例：</strong>2026年1月18日（土）19:00〜21:00（日本時間）</p>
+          <p class="muted">※ 毎月第3土曜日に継続開催予定</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">場所（オンライン）</div>
+        <div class="card-box">
+          <p class="muted">
+            Zoom または Google Meet にて開催します。参加リンクは開催前日に共有します。
+          </p>
+          <a class="cta" href="#">参加申込</a>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      主催：Senri Honda
+    </footer>
+
+  </div>
+
+  <!-- ===== Hero Reveal Script ===== -->
+  <script>
+    const heroImage = document.getElementById("heroImage");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          heroImage.classList.add("is-visible");
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(heroImage);
+  </script>
+
+</body>
+</html>

@@ -8,88 +8,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #121212;
-      font-family: 'Inter', 'Noto Sans JP', sans-serif;
-      color: #EAEAEA;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    header {
-      margin-top: 60px;
-      text-align: center;
-      animation: fadeIn 1.2s ease;
-    }
-
-    h1 {
-      font-weight: 600;
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-
-    p.subtitle {
-      font-size: 1rem;
-      color: #BBBBBB;
-      margin-bottom: 40px;
-    }
-
-    .intro {
-      width: 90%;
-      max-width: 650px;
-      background: #1E1E1E;
-      padding: 30px;
-      border-radius: 14px;
-      line-height: 1.8;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      animation: fadeIn 1.4s ease;
-    }
-
-    .links {
-      margin-top: 35px;
-      width: 90%;
-      max-width: 650px;
-      display: grid;
-      gap: 15px;
-    }
-
-    .card {
-      display: block;
-      padding: 18px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      background: #1E1E1E;
-      color: #EAEAEA;
-      border: 1px solid #2c2c2c;
-      font-size: 1.05rem;
-      transition: all 0.25s ease;
-    }
-
-    .card:hover {
-      border-color: #4DA3FF;
-      color: #4DA3FF;
-      transform: translateY(-3px);
-      box-shadow: 0 0 15px rgba(77,163,255,0.35);
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 30px 0;
-      font-size: 0.8rem;
-      color: #777;
-    }
-
-    /* animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- React -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -97,21 +17,42 @@
 </head>
 
 <body>
+
+  <!-- ===== Navigation Header ===== -->
+  <nav class="site-header">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Senri Honda</a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html">ホーム</a></li>
+
+        <li class="dropdown">
+          <span class="dropdown-label">読書会 ▾</span>
+          <ul class="dropdown-menu">
+            <li><a href="reading/octopus.html">タコの心身問題</a></li>
+            <li><a href="reading/ai-philosophy.html">AIと哲学</a></li>
+            <li><a href="reading/language.html">言語と意味</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Main Header ===== -->
   <header>
-    <h1>Senri Honda</h1>
+    <h1>Senri Honda / 本田茜吏</h1>
+    <p class="subtitle">IT Consultant / Cloud / Philosophy</p>
   </header>
 
+  <!-- ===== Intro ===== -->
   <section class="intro">
     <p>
-      IT consultant based in Tokyo.  
-      Working mainly in cloud infrastructure (AWS, Azure) and interested in NLP, philosophy, and linguistics.  
-      This page collects my basic information and external links.  
+      クラウド専門のITコンサルタント。哲学、言語学、NLP等にも関心があります。
     </p>
-
-    <!-- React Root -->
-    <div id="react-message" style="margin-top:20px; font-size:0.9rem; color:#9BCBFF;"></div>
+    <div id="react-message" class="react-message"></div>
   </section>
 
+  <!-- ===== Links ===== -->
   <section class="links">
     <a class="card" href="https://note.com/" target="_blank">📝 Note</a>
     <a class="card" href="https://researchmap.jp/senr1" target="_blank">🔍 researchmap</a>
@@ -124,12 +65,7 @@
 
   <!-- React Script -->
   <script>
-    const messages = [
-      "ゴジラ",
-      "寄生獣",
-      "虐殺器官",
-      "デススト"
-    ];
+    const messages = ["ゴジラ", "寄生獣", "虐殺器官", "デススト"];
 
     function RandomMessage() {
       const msg = messages[Math.floor(Math.random() * messages.length)];
