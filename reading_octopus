@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>タコの心身問題 読書会</title>
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --accent: #58a6ff;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+      --maxw: 820px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial,
+                   "Hiragino Kaku Gothic ProN","Noto Sans JP", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      padding: 32px 14px 60px;
+      color: var(--text);
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw);
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+
+    /* ======== HERO / メインビジュアル ======== */
+    .hero {
+      text-align: center;
+      padding: 48px 24px 30px;
+      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+    }
+    .octopus {
+      width: 210px;
+      height: 210px;
+      margin-bottom: 18px;
+    }
+    .title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+    }
+
+    /* ======== CONTENT ======== */
+    .content {
+      padding: 32px 28px;
+      line-height: 1.75;
+    }
+    .section {
+      margin-bottom: 32px;
+    }
+    .label {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 18px;
+    }
+    .card {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      padding: 18px;
+      border-radius: 12px;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* CTA */
+    .cta {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 18px;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+    }
+
+    footer {
+      padding: 18px 26px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid #30363d;
+      text-align: right;
+      background: #0d1117;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap" role="main">
+
+    <!-- ======== HERO SECTION ======== -->
+    <header class="hero">
+      <!-- 大きめのタコSVG（ダークモード用に色調整） -->
+      <svg class="octopus" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="タコのイラスト">
+        <g transform="translate(0,0)">
+          <!-- 本体 -->
+          <ellipse cx="100" cy="78" rx="60" ry="48" fill="#58a6ff"/>
+          <!-- 目 -->
+          <ellipse cx="82" cy="72" rx="10" ry="12" fill="#fff"/>
+          <ellipse cx="118" cy="72" rx="10" ry="12" fill="#fff"/>
+          <circle cx="82" cy="74" r="4" fill="#0d1117"/>
+          <circle cx="118" cy="74" r="4" fill="#0d1117"/>
+
+          <!-- 足 -->
+          <path d="M28 120 C44 110, 40 150, 56 146" stroke="#58a6ff" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path d="M52 132 C70 126, 74 158, 92 154" stroke="#58a6ff" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path d="M76 142 C88 138, 100 170, 118 166" stroke="#58a6ff" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path d="M96 146 C110 140, 132 168, 150 160" stroke="#58a6ff" stroke-width="14" stroke-linecap="round" fill="none"/>
+
+          <!-- 吸盤 -->
+          <g fill="#cfe8ff">
+            <circle cx="40" cy="132" r="5"/>
+            <circle cx="64" cy="148" r="5"/>
+            <circle cx="90" cy="156" r="5"/>
+            <circle cx="120" cy="162" r="5"/>
+            <circle cx="144" cy="154" r="5"/>
+          </g>
+        </g>
+      </svg>
+
+      <div class="title">タコの心身問題 読書会</div>
+    </header>
+
+    <!-- ======== MAIN CONTENT ======== -->
+    <div class="content">
+      <div class="section">
+        <div class="label">概要</div>
+        <div class="card">
+          <p class="muted">
+            この読書会では『タコの心身問題』を手がかりに、タコの知性・意識・身体性をテーマに対話します。
+            分散した神経系や行動の多様性から、心の哲学・認知科学・生物学的観点を結びつけ、
+            タコという存在が投げかける「心とは何か」という問いを深く考察します。初心者歓迎。
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">開催日時</div>
+        <div class="card">
+          <p class="muted"><strong>例）</strong> 2026年1月18日（土）19:00〜21:00（日本時間）</p>
+          <p class="muted">※ 毎月第3土曜日に継続開催予定</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">場所（オンライン）</div>
+        <div class="card">
+          <p class="muted">
+            Zoom または Google Meet にて開催します。参加リンクは開催前日に共有します。
+          </p>
+          <a class="cta" href="#">参加申込</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      主催：タコの心身問題読書会
+    </footer>
+  </div>
+</body>
+</html>
