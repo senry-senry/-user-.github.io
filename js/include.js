@@ -6,5 +6,9 @@ async function includeHTML(selector, path) {
   el.innerHTML = await res.text();
 }
 
-includeHTML("#site-header", "../common/header.html");
-includeHTML("#site-footer", "../common/footer.html");
+const BASE = location.pathname.split("/")[1]
+  ? `/${location.pathname.split("/")[1]}`
+  : "";
+
+includeHTML("#site-header", `${BASE}/common/header.html`);
+includeHTML("#site-footer", `${BASE}/common/footer.html`);
