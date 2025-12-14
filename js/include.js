@@ -6,8 +6,9 @@ async function includeHTML(selector, path) {
   el.innerHTML = await res.text();
 }
 
-// GitHub Pages のリポジトリ名を自動取得
-const REPO = location.pathname.split("/")[1];
+const BASE = location.pathname.split("/")[1]
+  ? `/${location.pathname.split("/")[1]}`
+  : "";
 
-includeHTML("#site-header", `/${REPO}/common/header.html`);
-includeHTML("#site-footer", `/${REPO}/common/footer.html`);
+includeHTML("#site-header", `${BASE}/common/header.html`);
+includeHTML("#site-footer", `${BASE}/common/footer.html`);
