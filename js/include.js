@@ -3,12 +3,12 @@ async function includeHTML(selector, path) {
   if (!el) return;
 
   const res = await fetch(path);
+  if (!res.ok) {
+    el.innerHTML = "";
+    return;
+  }
   el.innerHTML = await res.text();
 }
 
-const BASE = location.pathname.split("/")[1]
-  ? `/${location.pathname.split("/")[1]}`
-  : "";
-
-includeHTML("#site-header", `${BASE}/common/header.html`);
-includeHTML("#site-footer", `${BASE}/common/footer.html`);
+includeHTML("#site-header", "/common/header.html");
+includeHTML("#site-footer", "/common/footer.html");
